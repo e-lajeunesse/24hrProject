@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace _24hr.Models
 {
-    public class Class1
+    public class ReplyCreate
     {
+        
+        public string Text { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
     }
 }
