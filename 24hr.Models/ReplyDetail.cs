@@ -5,24 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _24hr.Data
+namespace _24hr.Models
 {
-    public class Reply
+    public class ReplyDetail
     {
-        [Key]
         public int ReplyId { get; set; }
-
-        [Required]
-        public string Text { get; set; }
-        [Required]
         public Guid Author { get; set; }
+        public string Text { get; set; }
 
-        [Required]
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        // [ForeignKey(nameof(Comment))]
-        // public int CommentId { get; set; }
-        // public virtual Comment Comment {get;set;}
+        // public Comment Comment {get;set;}
     }
 }

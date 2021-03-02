@@ -43,5 +43,40 @@ namespace _24hrProjectWebAPI.Controllers
             List<ReplyListItem> replies = await service.GetAllReplies();
             return Ok(replies);
         }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> GetReplyById(int id)
+        {
+            ReplyService service = CreateReplyService();
+            ReplyDetail reply = await service.GetReplyById(id);
+            return Ok(reply);
+        }
+
+        [HttpPut]
+        public async Task<IHttpActionResult> EditReply(ReplyEdit model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            ReplyService service = CreateReplyService();
+            if (!await service.EditReply(model))
+            {
+                return InternalServerError();
+            }
+            return Ok();
+        }
+
+        [HttpDelete]
+
+        public async Task<IHttpActionResult> DeleteReply(int id)
+        {
+            ReplyService service = CreateReplyService();
+            if (!await service.DeleteReply(id))
+            {
+                return InternalServerError();
+            }
+            return Ok();
+        }
     }
 }
