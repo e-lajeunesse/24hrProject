@@ -14,5 +14,6 @@ namespace _24hr.Models
 
         [Display(Name="Created")]
         public DateTimeOffset CreatedPost { get; set; }
+        public string Comment { get; set; }
     }
 }

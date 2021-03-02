@@ -48,7 +48,8 @@ namespace _24hr.Services
                                 {
                                     PostId = p.PostId,
                                     Title = p.Title,
-                                    CreatedPost = p.CreatedPost
+                                    CreatedPost = p.CreatedPost,
+                                    Comment = p.Comment
                                 }
                         );
                 return query.ToArray();
@@ -70,7 +71,8 @@ namespace _24hr.Services
                         Title = entity.Title,
                         Text = entity.Text,
                         CreatedPost = entity.CreatedPost,
-                        ModifiedPost = entity.ModifiedPost
+                        ModifiedPost = entity.ModifiedPost,
+                        Comment = entity.Comment
                     };
             }
         }

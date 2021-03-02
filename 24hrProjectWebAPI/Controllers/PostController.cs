@@ -57,7 +57,7 @@ namespace _24hrProjectWebAPI.Controllers
         }
 
         [HttpPut]
-        public IHttpActionResult Put(PostEdit post)
+        public IHttpActionResult EditPost(PostEdit post)
         {
             if (!ModelState.IsValid)
             {
