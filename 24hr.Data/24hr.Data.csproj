@@ -85,8 +85,8 @@
   </ItemGroup>
   <ItemGroup>
 
+
     <Compile Include="Class1.cs" />
-    <Compile Include="Comment.cs" />
 
     <Compile Include="Comment.cs" />
     <Compile Include="Migrations\202103012126016_InitialCreate.cs" />
