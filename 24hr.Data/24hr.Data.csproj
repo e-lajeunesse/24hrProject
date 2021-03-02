@@ -84,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comment.cs" />
     <Compile Include="Migrations\202103012126016_InitialCreate.cs" />
     <Compile Include="Migrations\202103012126016_InitialCreate.Designer.cs">
       <DependentUpon>202103012126016_InitialCreate.cs</DependentUpon>
