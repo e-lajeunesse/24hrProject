@@ -12,6 +12,6 @@ namespace _24hr.Models
         public string Text { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
 
-        //public int CommentId { get; set; }
+        public int CommentId { get; set; }
     }
 }

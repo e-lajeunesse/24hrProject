@@ -39,5 +39,25 @@ namespace _24hrProjectWebAPI.Controllers
 
             return Ok();
         }
+
+        /*[HttpPut]
+        public IHttpActionResult EditComment(CommentEdit comment)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var service = CreateCommentService();
+
+            if (!service.EditComment(comment))
+            {
+                return InternalServerError();
+            }
+
+            return Ok();
+        }*/
+
+
     }
 }

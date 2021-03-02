@@ -25,8 +25,8 @@ namespace _24hr.Services
             {
                 Author = _userId,
                 Text = model.Text,
-                CreatedUtc = DateTimeOffset.Now
-                //CommentId = model.CommentId
+                CreatedUtc = DateTimeOffset.Now,
+                CommentId = model.CommentId
             };
 
             _context.Replies.Add(reply);
@@ -60,14 +60,14 @@ namespace _24hr.Services
                 Author = replyToGet.Author,
                 Text = replyToGet.Text,
                 CreatedUtc = replyToGet.CreatedUtc,
-                ModifiedUtc = replyToGet.ModifiedUtc
-                //Comment = replyToGet.Comment
+                ModifiedUtc = replyToGet.ModifiedUtc,
+                Comment = replyToGet.Comment
             };
 
             return replyDetail;
         }
 
-        /*        public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
+                public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
                 {
                     List<Reply> replies = await _context.Replies.Where(
                         reply => reply.CommentId == commentId).ToListAsync();
@@ -82,14 +82,14 @@ namespace _24hr.Services
                     }).ToList();
 
                     return replyListItems;
-                }*/
+                }
 
         public async Task<bool> EditReply(ReplyEdit model)
         {
             Reply replyToEdit = await _context.Replies.SingleAsync(reply => reply.ReplyId == model.ReplyId);
             replyToEdit.Text = model.Text;
             replyToEdit.ModifiedUtc = DateTimeOffset.Now;
-            //replyToEdit.CommentId = model.CommentId;
+            replyToEdit.CommentId = model.CommentId;
             return await _context.SaveChangesAsync() == 1;
         }
 
