@@ -57,7 +57,9 @@
     <Compile Include="CommentCreate.cs" />
     <Compile Include="CommentDetail.cs" />
     <Compile Include="CommentListItems.cs" />
+
     <Compile Include="CommentEdit.cs" />
+
     <Compile Include="PostEdit.cs" />
     <Compile Include="PostCreate.cs" />
     <Compile Include="PostDetail.cs" />

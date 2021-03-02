@@ -43,7 +43,7 @@ namespace _24hr.Services
                         .Posts
                         .Where(p => p.OwnerId == _userId)
                         .Select(
-                            p=>
+                            p =>
                                 new PostListItem
                                 {
                                     PostId = p.PostId,
@@ -51,7 +51,7 @@ namespace _24hr.Services
                                     CreatedPost = p.CreatedPost,
                                     Comment = p.Comment
                                 }
-                        );
+                        ); 
                 return query.ToArray();
             }
         }

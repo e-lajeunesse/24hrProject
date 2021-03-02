@@ -67,22 +67,34 @@ namespace _24hr.Services
             return replyDetail;
         }
 
+
                 public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
                 {
                     List<Reply> replies = await _context.Replies.Where(
                         reply => reply.CommentId == commentId).ToListAsync();
 
-                    List<ReplyListItem> replyListItems = replies.Select(reply => new ReplyListItem()
-                    {
+        public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
+        {
+            List<Reply> replies = await _context.Replies.Where(
+                reply => reply.CommentId == commentId).ToListAsync();
+
+
+               List<ReplyListItem> replyListItems = replies.Select(reply => new ReplyListItem()
+               {
                         ReplyId = reply.ReplyId,
                         Author = _userId,
                         Text = reply.Text,
                         CreatedUtc = reply.CreatedUtc,
                         ModifiedUtc = reply.ModifiedUtc
-                    }).ToList();
+               }).ToList();
+
 
                     return replyListItems;
                 }
+
+               return replyListItems;
+        }
+
 
         public async Task<bool> EditReply(ReplyEdit model)
         {
