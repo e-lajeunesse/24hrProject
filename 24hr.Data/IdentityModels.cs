@@ -32,6 +32,8 @@ namespace _24hr.Data
         {
             return new ApplicationDbContext();
         }
+        // public DbSet<Reply> Replies { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
 
         //public DbSet<Post> Posts { get; set; }
@@ -65,4 +67,7 @@ namespace _24hr.Data
             HasKey(iur => iur.UserId);
         }
     }
+
 }
+
+
