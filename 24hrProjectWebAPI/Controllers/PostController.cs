@@ -1,4 +1,5 @@
-﻿using _24hr.Models;
+﻿using _24hr.Data;
+using _24hr.Models;
 using _24hr.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace _24hrProjectWebAPI.Controllers
@@ -13,9 +15,10 @@ namespace _24hrProjectWebAPI.Controllers
     [Authorize]
     public class PostController : ApiController
     {
+        // private readonly ApplicationDbContext _context = new ApplicationDbContext();
 
         [HttpGet]
-        public IHttpActionResult Get()
+        public IHttpActionResult CreatePost()
         {
             PostService postService = CreatePostService();
             var posts = postService.GetPosts();
