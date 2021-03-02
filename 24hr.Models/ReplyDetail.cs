@@ -18,6 +18,10 @@ namespace _24hr.Models
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
 
+
+         public Comment Comment {get;set;}
+
         public Comment Comment {get;set;}
+
     }
 }

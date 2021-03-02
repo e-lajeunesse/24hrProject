@@ -60,17 +60,24 @@ namespace _24hr.Services
                 Author = replyToGet.Author,
                 Text = replyToGet.Text,
                 CreatedUtc = replyToGet.CreatedUtc,
-                ModifiedUtc = replyToGet.ModifiedUtc
-                //Comment = replyToGet.Comment
+                ModifiedUtc = replyToGet.ModifiedUtc,
+                Comment = replyToGet.Comment
             };
 
             return replyDetail;
         }
 
+
+                public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
+                {
+                    List<Reply> replies = await _context.Replies.Where(
+                        reply => reply.CommentId == commentId).ToListAsync();
+
         public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
         {
             List<Reply> replies = await _context.Replies.Where(
                 reply => reply.CommentId == commentId).ToListAsync();
+
 
                List<ReplyListItem> replyListItems = replies.Select(reply => new ReplyListItem()
                {
@@ -81,8 +88,13 @@ namespace _24hr.Services
                         ModifiedUtc = reply.ModifiedUtc
                }).ToList();
 
+
+                    return replyListItems;
+                }
+
                return replyListItems;
         }
+
 
         public async Task<bool> EditReply(ReplyEdit model)
         {
