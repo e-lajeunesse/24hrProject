@@ -18,7 +18,9 @@ namespace _24hr.Data
 
         public Guid Author { get; set; }
 
-        public virtual List<string> Reply { get; set; } = new List<string>();
+
+        public virtual List<string> Replies { get; set; } 
+        public string Reply { get; set; }
 
         [Required]
         [ForeignKey(nameof(Post))]

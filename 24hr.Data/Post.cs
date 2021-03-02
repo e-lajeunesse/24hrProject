@@ -21,6 +21,7 @@ namespace _24hr.Data
         [Required]
         public DateTimeOffset CreatedPost { get; set; }
         public DateTimeOffset? ModifiedPost { get; set; }
+        // public virtual List<string> Comment { get; set; } = new List<string>();
         public virtual List<Comment> Comments { get; set; }
         public string Comment { get; set; }
     }
