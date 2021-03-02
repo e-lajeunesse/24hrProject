@@ -16,7 +16,6 @@ namespace _24hr.Models
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
-
         
     }
 }

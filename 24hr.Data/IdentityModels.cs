@@ -33,6 +33,7 @@ namespace _24hr.Data
             return new ApplicationDbContext();
         }
 
+
         //public DbSet<Post> Posts { get; set; }
         public DbSet<Reply> Replies { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

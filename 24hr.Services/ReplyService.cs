@@ -36,14 +36,16 @@ namespace _24hr.Services
         public async Task<List<ReplyListItem>> GetAllReplies()
         {
             List<Reply> replies = await _context.Replies.ToListAsync();
-            List<ReplyListItem> replyListItems = replies.Select(reply => new ReplyListItem()
-            {
-                ReplyId = reply.ReplyId,
-                Author = _userId,
-                Text = reply.Text,
-                CreatedUtc = reply.CreatedUtc,
-                ModifiedUtc = reply.ModifiedUtc
-            }).ToList();
+            List<ReplyListItem> replyListItems = replies
+                .Where(reply => reply.Author == _userId)
+                .Select(reply => new ReplyListItem()
+                {
+                    ReplyId = reply.ReplyId,
+                    Author = _userId,
+                    Text = reply.Text,
+                    CreatedUtc = reply.CreatedUtc,
+                    ModifiedUtc = reply.ModifiedUtc
+                }).ToList();
 
             return replyListItems;
         }
@@ -65,22 +67,22 @@ namespace _24hr.Services
             return replyDetail;
         }
 
-/*        public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
-        {
-            List<Reply> replies = await _context.Replies.Where(
-                reply => reply.CommentId == commentId).ToListAsync();
+        /*        public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
+                {
+                    List<Reply> replies = await _context.Replies.Where(
+                        reply => reply.CommentId == commentId).ToListAsync();
 
-            List<ReplyListItem> replyListItems = replies.Select(reply => new ReplyListItem()
-            {
-                ReplyId = reply.ReplyId,
-                Author = _userId,
-                Text = reply.Text,
-                CreatedUtc = reply.CreatedUtc,
-                ModifiedUtc = reply.ModifiedUtc
-            }).ToList();
+                    List<ReplyListItem> replyListItems = replies.Select(reply => new ReplyListItem()
+                    {
+                        ReplyId = reply.ReplyId,
+                        Author = _userId,
+                        Text = reply.Text,
+                        CreatedUtc = reply.CreatedUtc,
+                        ModifiedUtc = reply.ModifiedUtc
+                    }).ToList();
 
-            return replyListItems;
-        }*/
+                    return replyListItems;
+                }*/
 
         public async Task<bool> EditReply(ReplyEdit model)
         {

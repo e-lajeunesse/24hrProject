@@ -11,6 +11,7 @@ using System.Web.Http;
 
 namespace _24hrProjectWebAPI.Controllers
 {
+    [Authorize]
     public class ReplyController : ApiController
     {
         private ReplyService CreateReplyService()
