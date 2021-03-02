@@ -57,7 +57,7 @@
     <Compile Include="Class1.cs" />
 
     <Compile Include="CommentService.cs" />
-=======
+
     <Compile Include="PostService.cs" />
 
     <Compile Include="Properties\AssemblyInfo.cs" />
