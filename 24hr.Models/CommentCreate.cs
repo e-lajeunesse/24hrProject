@@ -13,8 +13,7 @@ namespace _24hr.Models
         [Required]
         [MaxLength(500, ErrorMessage = "You have too much to say; Please limit to 500 characters.")]
         public string Text { get; set; }
-
-
+        [Required]
+        public int PostId { get; set; }
     }
-
 }

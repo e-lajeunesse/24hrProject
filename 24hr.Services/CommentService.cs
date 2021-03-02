@@ -22,8 +22,9 @@ namespace _24hr.Services
         {
             var entity = new Comment()
             {
-                Author = _userId,
-                Text = model.Text
+                Text = model.Text,
+                PostId = model.PostId,
+                Author = _userId
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -42,8 +43,10 @@ namespace _24hr.Services
                     {
                         Id = a.Id,
                         Author = a.Author,
-                        Text = a.Text
-                    });
+                        Text = a.Text,
+                        PostId = a.PostId,
+                        Reply = a.Reply
+                    }); 
                 return query.ToList();
             }
         }

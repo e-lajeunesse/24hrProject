@@ -25,8 +25,8 @@ namespace _24hr.Services
             {
                 Author = _userId,
                 Text = model.Text,
-                CreatedUtc = DateTimeOffset.Now
-                //CommentId = model.CommentId
+                CreatedUtc = DateTimeOffset.Now,
+                CommentId = model.CommentId
             };
 
             _context.Replies.Add(reply);
@@ -67,29 +67,29 @@ namespace _24hr.Services
             return replyDetail;
         }
 
-        /*        public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
-                {
-                    List<Reply> replies = await _context.Replies.Where(
-                        reply => reply.CommentId == commentId).ToListAsync();
+        public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
+        {
+            List<Reply> replies = await _context.Replies.Where(
+                reply => reply.CommentId == commentId).ToListAsync();
 
-                    List<ReplyListItem> replyListItems = replies.Select(reply => new ReplyListItem()
-                    {
+               List<ReplyListItem> replyListItems = replies.Select(reply => new ReplyListItem()
+               {
                         ReplyId = reply.ReplyId,
                         Author = _userId,
                         Text = reply.Text,
                         CreatedUtc = reply.CreatedUtc,
                         ModifiedUtc = reply.ModifiedUtc
-                    }).ToList();
+               }).ToList();
 
-                    return replyListItems;
-                }*/
+               return replyListItems;
+        }
 
         public async Task<bool> EditReply(ReplyEdit model)
         {
             Reply replyToEdit = await _context.Replies.SingleAsync(reply => reply.ReplyId == model.ReplyId);
             replyToEdit.Text = model.Text;
             replyToEdit.ModifiedUtc = DateTimeOffset.Now;
-            //replyToEdit.CommentId = model.CommentId;
+            replyToEdit.CommentId = model.CommentId;
             return await _context.SaveChangesAsync() == 1;
         }
 

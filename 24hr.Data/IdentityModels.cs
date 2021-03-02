@@ -32,10 +32,10 @@ namespace _24hr.Data
         {
             return new ApplicationDbContext();
         }
-        
-         public DbSet<Comment> Comments { get; set; }
 
-        //public DbSet<Post> Posts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<Post> Posts { get; set; }
         public DbSet<Reply> Replies { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -67,18 +67,4 @@ namespace _24hr.Data
             HasKey(iur => iur.UserId);
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 974d299b131bd7c8031d1e27bde65fea2770c64e
-=======
-
-}
-
-
-
-
-
->>>>>>> 81844a56173b1466d76ca20c5132b338c9090d57

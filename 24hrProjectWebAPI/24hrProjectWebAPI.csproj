@@ -72,6 +72,7 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
 
+
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -238,16 +239,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Compile Include="Controllers\PostController.cs" />
-=======
-    <Compile Include="Controllers\ReplyController.cs" />
->>>>>>> 974d299b131bd7c8031d1e27bde65fea2770c64e
-=======
+
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\ReplyController.cs" />
->>>>>>> 81844a56173b1466d76ca20c5132b338c9090d57
+
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

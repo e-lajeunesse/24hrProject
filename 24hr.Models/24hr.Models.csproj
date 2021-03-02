@@ -54,25 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 81844a56173b1466d76ca20c5132b338c9090d57
-    <Compile Include="Class1.cs" />
-
     <Compile Include="CommentCreate.cs" />
     <Compile Include="CommentListItems.cs" />
-
     <Compile Include="PostEdit.cs" />
     <Compile Include="PostCreate.cs" />
     <Compile Include="PostDetail.cs" />
     <Compile Include="PostListItem.cs" />
-<<<<<<< HEAD
-=======
->>>>>>> 974d299b131bd7c8031d1e27bde65fea2770c64e
-=======
-
->>>>>>> 81844a56173b1466d76ca20c5132b338c9090d57
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReplyCreate.cs" />
     <Compile Include="ReplyDetail.cs" />
@@ -82,6 +69,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\24hr.Data\24hr.Data.csproj">
+      <Project>{81433a29-fedb-452b-a288-667bf16835f0}</Project>
+      <Name>24hr.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
