@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _24hr.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace _24hr.Models
 
             [MaxLength(500, ErrorMessage = "You have too much to say; Please limit to 500 characters.")]
             public string Text { get; set; }
+
+            public List<Reply> Reply { get; set; }
 
             public Guid Author { get; set; }
         }

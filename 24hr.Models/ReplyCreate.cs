@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _24hr.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace _24hr.Models
         public string Text { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
 
-        //public int CommentId { get; set; }
+        //Comment ID
+        public int CommentId { get; set; }
+        public Comment Comment { get; set; }
     }
 }

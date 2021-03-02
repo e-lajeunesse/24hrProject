@@ -10,30 +10,20 @@ namespace _24hr.Data
 {
     public class Comment
     {
+
         [Key]
-        public int Id { get; set; }
+        public int CommentId { get; set; }
 
         [MaxLength(500, ErrorMessage = "You have too much to say; Please limit to 500 characters.")]
         public string Text { get; set; }
 
         public Guid Author { get; set; }
 
+        public virtual List<Reply> Reply { get; set; } = new List<Reply>();
 
-        //public virtual List<string> Reply { get; set; } = new List<string>();
-
-        /*[Required]
+/*        [Required]
         [ForeignKey(nameof(Post))]
         public int PostId { get; set; }
         public virtual Post Post { get; set; }*/
-
-        public virtual List<string> Reply { get; set; } = new List<string>();
-
-        [Required]
-        [ForeignKey(nameof(Post))]
-        public int PostId { get; set; }
-        public virtual Post Post { get; set; }
-
-
-
     }
 }

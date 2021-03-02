@@ -25,8 +25,9 @@ namespace _24hr.Services
             {
                 Author = _userId,
                 Text = model.Text,
-                CreatedUtc = DateTimeOffset.Now
-                //CommentId = model.CommentId
+                CreatedUtc = DateTimeOffset.Now,
+                CommentId = model.CommentId,
+                Comment = model.Comment
             };
 
             _context.Replies.Add(reply);
@@ -60,29 +61,29 @@ namespace _24hr.Services
                 Author = replyToGet.Author,
                 Text = replyToGet.Text,
                 CreatedUtc = replyToGet.CreatedUtc,
-                ModifiedUtc = replyToGet.ModifiedUtc
-                //Comment = replyToGet.Comment
+                ModifiedUtc = replyToGet.ModifiedUtc,
+                Comment = replyToGet.Comment
             };
 
             return replyDetail;
         }
 
-        /*        public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
-                {
-                    List<Reply> replies = await _context.Replies.Where(
-                        reply => reply.CommentId == commentId).ToListAsync();
+        public async Task<List<ReplyListItem>> GetAllRepliesForComment(int commentId)
+        {
+            List<Reply> replies = await _context.Replies.Where(
+                reply => reply.CommentId == commentId).ToListAsync();
 
-                    List<ReplyListItem> replyListItems = replies.Select(reply => new ReplyListItem()
-                    {
-                        ReplyId = reply.ReplyId,
-                        Author = _userId,
-                        Text = reply.Text,
-                        CreatedUtc = reply.CreatedUtc,
-                        ModifiedUtc = reply.ModifiedUtc
-                    }).ToList();
+            List<ReplyListItem> replyListItems = replies.Select(reply => new ReplyListItem()
+            {
+                ReplyId = reply.ReplyId,
+                Author = _userId,
+                Text = reply.Text,
+                CreatedUtc = reply.CreatedUtc,
+                ModifiedUtc = reply.ModifiedUtc
+            }).ToList();
 
-                    return replyListItems;
-                }*/
+            return replyListItems;
+        }
 
         public async Task<bool> EditReply(ReplyEdit model)
         {
