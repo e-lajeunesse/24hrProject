@@ -59,7 +59,12 @@
     <Compile Include="PostCreate.cs" />
     <Compile Include="PostDetail.cs" />
     <Compile Include="PostListItem.cs" />
+
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplyCreate.cs" />
+    <Compile Include="ReplyDetail.cs" />
+    <Compile Include="ReplyEdit.cs" />
+    <Compile Include="ReplyListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
