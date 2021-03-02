@@ -18,12 +18,21 @@ namespace _24hr.Data
 
         public Guid Author { get; set; }
 
+
+        //public virtual List<string> Reply { get; set; } = new List<string>();
+
+        /*[Required]
+        [ForeignKey(nameof(Post))]
+        public int PostId { get; set; }
+        public virtual Post Post { get; set; }*/
+
         public virtual List<string> Reply { get; set; } = new List<string>();
 
         [Required]
         [ForeignKey(nameof(Post))]
         public int PostId { get; set; }
         public virtual Post Post { get; set; }
+
 
 
     }

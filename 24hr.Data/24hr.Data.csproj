@@ -85,6 +85,13 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+    <Compile Include="Class1.cs" />
+    <Compile Include="Comment.cs" />
+
+>>>>>>> 81844a56173b1466d76ca20c5132b338c9090d57
     <Compile Include="Comment.cs" />
     <Compile Include="Migrations\202103012126016_InitialCreate.cs" />
     <Compile Include="Migrations\202103012126016_InitialCreate.Designer.cs">
@@ -96,8 +103,13 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
+<<<<<<< HEAD
 =======
 >>>>>>> 974d299b131bd7c8031d1e27bde65fea2770c64e
+=======
+
+
+>>>>>>> 81844a56173b1466d76ca20c5132b338c9090d57
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reply.cs" />
