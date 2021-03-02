@@ -1,4 +1,6 @@
-﻿using _24hr.Models;
+﻿using _24hr.Data;
+using _24hr.Models;
+using _24hr.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -12,19 +14,25 @@ namespace _24hrProjectWebAPI.Controllers
     [Authorize]
     public class CommentsController : ApiController
     {
+        private CommentService CreateCommentService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var commentService = new CommentService(userId);
+            return commentService;
+        }
         public IHttpActionResult Get()
         {
-            Comments commentType = CreateCommentType();
-            var comment = commentType.GetComments();
+            var commentService = CreateCommentService();
+            var comment = commentService.GetComments();
             return Ok(comment);
         }
 
-        public IHttpActionResult PostComment()
+        public IHttpActionResult PostComment(CommentCreate comment)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var post = CreateCommentPost();
+            var post = CreateCommentService();
 
             if (!post.CreateComment(comment))
                 return InternalServerError();
