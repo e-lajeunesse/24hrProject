@@ -63,4 +63,3 @@ public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUse
         HasKey(iur => iur.UserId);
     }
 }
-}
