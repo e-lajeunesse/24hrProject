@@ -9,9 +9,7 @@ using System.Threading.Tasks;
 namespace _24hr.Data
 {
     public class Comment
-    {
-       
-        
+    {   
             [Key]
             public int CommentId { get; set; }
 
@@ -26,9 +24,7 @@ namespace _24hr.Data
             [Required]
             [ForeignKey(nameof(Post))]
             public int PostId { get; set; }
-            public virtual Post Post { get; set; }
-
-       
+            public virtual Post Post { get; set; }  
     }
 }
 
